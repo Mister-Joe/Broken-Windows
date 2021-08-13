@@ -2,7 +2,9 @@
 
 ## What is Broken Windows?
 
-It's a privilege escalation tool for Windows. It leverages access tokens that have the SeImpersonatePrivilege to eventually pop a reverse shell as SYSTEM. It can be run through the Python interpreter if it's available on your target system, or it can be run as a standalone executable.
+It's a privilege escalation tool for Windows. It leverages the access token of the user who runs it to eventually pop a reverse shell as SYSTEM. The user's access token **must** have the SeImpersonatePrivilege in order for Broken Windows to work. 
+
+It can be run through the Python interpreter if it's available on your target system, or it can be run as a standalone executable.
 
 ## How can I convert the Broken Windows.py file to an executable?
 
@@ -39,4 +41,4 @@ You (hopefully!) will receive a reverse shell as SYSTEM:
 
 ## Tips
 
-I have noticed that Windows Defender (and possibly other AVs) **do not** detect any threats if you use the python interpreter to run Broken Windows instead of an executable. If you use the executable, most AVs run-time analysis will detect the reverse shell.
+I have noticed that Windows Defender (and possibly other AVs) **do not** detect any threats if you use the python interpreter to run Broken Windows instead of the executable. If you use the executable, most AVs runtime analysis will detect the reverse shell.

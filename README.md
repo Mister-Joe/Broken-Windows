@@ -1,6 +1,6 @@
-# Broken-Windows
+# Broken Windows
 
-## What is Broken Windows?
+## What is it?
 
 It's a privilege escalation tool for Windows. It leverages the access token of the user who runs it to eventually pop a reverse shell as SYSTEM. The user's access token **must** have the SeImpersonatePrivilege in order for Broken Windows to work. 
 

@@ -39,6 +39,12 @@ You (hopefully!) will receive a reverse shell as SYSTEM:
 
 ![SHELL](https://user-images.githubusercontent.com/16895391/129421207-727ed0e5-8175-4fb7-aa0a-0c1b3a77741c.PNG)
 
-## Tips
+## Tips and Tricks
 
 I have noticed that Windows Defender (and possibly other AVs) **do not** detect any threats if you use the python interpreter to run Broken Windows instead of the executable. If you use the executable, most AVs runtime analysis will detect the reverse shell.
+
+## Why did you use Python for this?
+
+### Good question.
+
+To be honest with you, I have no idea. This project almost entirely uses win32 api functions that are accessed through ctypes. It would make more sense to just use C or C++ to do this, but I guess I just wanted to see if it could be done with ctypes?

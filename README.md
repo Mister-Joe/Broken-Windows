@@ -8,13 +8,13 @@ It can be run through the Python interpreter if it's available on your target sy
 
 ## How can I convert the Broken Windows.py file to an executable?
 
-Just follow these steps.
+I promise, it's not too hard. Just follow these steps. ***NOTE: you must be using Python 3.6.8 or earlier for the executable to work on Windows 7. If your target is Windows 10, I have successfully tested Python 3.8.1 on it.***
 
 ```
 pip install pyinstaller
 ```
 ```
-pyinstaller --onefile --console "/path/to/Broken Windows.py"
+pyinstaller --clean --onefile --console --add-data "/path/to/DLLs/*.*;." "/path/to/Broken Windows.py"
 ```
 
 ```Broken Windows.exe``` will be in the ```dist``` folder created by pyinstaller.
